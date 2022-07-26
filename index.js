@@ -16,6 +16,7 @@ console.log(`Welcome to Currency Converter!
 1 USD equals 74.36 RUB
 1 USD equals 0.75 GBP`);
 
+let oneOrTwo;
 let frm;
 let to;
 let amount;
@@ -25,15 +26,14 @@ let conv;
 while(true) {
     console.log("What do you want to do?");
     console.log("1-Convert currencies 2-Exit program");
-    let oneOrTwo = Number(input());
+
+    oneOrTwo = Number(input());
 
     if(isNaN(oneOrTwo) == true) {
     console.log("Unknown input");
-    continue;
     }
 
     if(oneOrTwo === 1) {
-        
         frm = input('From:');
         frm = frm.toUpperCase();
 
@@ -42,7 +42,7 @@ while(true) {
             continue;
         }
 
-        to = input('To:')
+        to = input('To:');
         to = to.toUpperCase();
 
         if (currencies[to] === undefined) {
@@ -77,6 +77,5 @@ while(true) {
     }
 
 }
-
 
 
