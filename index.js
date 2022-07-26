@@ -30,8 +30,9 @@ while(true) {
     oneOrTwo = Number(input());
 
     if(isNaN(oneOrTwo) == true) {
-    console.log("Unknown input");
-    }
+        console.log("Unknown input");
+        continue;
+      }
 
     if(oneOrTwo === 1) {
         frm = input('From:');
