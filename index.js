@@ -23,24 +23,32 @@ let amount;
 let conv;
 
 
+
 while(true) {
     console.log("What do you want to do?");
     console.log("1-Convert currencies 2-Exit program");
 
     oneOrTwo = Number(input());
 
-    if(isNaN(oneOrTwo) == true) {
+    if(isNaN(oneOrTwo) == true || oneOrTwo >= 3) {
         console.log("Unknown input");
-        continue;
-      }
+        // continue;
+    } 
 
     if(oneOrTwo === 1) {
-        frm = input('From:');
+        console.log('What do you want to convert?');
+        console.log('From:');
+        frm = input();
         frm = frm.toUpperCase();
 
         if (currencies[frm] === undefined) {
             console.log("Unknown currency");
-            continue;
+           // continue;
+           while(currencies[frm] === undefined) {
+            frm = input('From:');
+            frm = frm.toUpperCase();
+           }
+           
         }
 
         to = input('To:');
@@ -48,7 +56,11 @@ while(true) {
 
         if (currencies[to] === undefined) {
             console.log("Unknown currency");
-            continue;
+            // continue;
+            while(currencies[to] === undefined) {
+                to = input('To:');
+                to = to.toUpperCase();
+            }
         }
 
         amount = Number(input('Amount:')); 
